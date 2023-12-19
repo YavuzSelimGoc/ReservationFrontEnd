@@ -3,179 +3,32 @@
   <div class="section properties">
     <div class="container col-md-11">
       <ul class="properties-filter">
-        <li>
-          <a class="is_active" href="#!" data-filter="*">Hepsi</a>
-        </li>
-        <li>
-          <a href="#!" data-filter=".adv">Halı Saha</a>
-        </li>
-        <li>
-          <a href="#!" data-filter=".str">Berber</a>
-        </li>
-        <li>
-          <a href="#!" data-filter=".rac">Düğün Salonu</a>
-        </li>
-        <li>
-          <a href="#!" data-filter=".rac">Restorant</a>
+        <li >
+          <a class="active mx-2" (click)="getBusiness()"  data-filter="*">Hepsi</a>
+          <a *ngFor="let item of categories" class="is_active mx-2 my-3" (click)="getBusinessById(item.categoryId)" >{{item.categoryName}}</a>
         </li>
       </ul>
+
       <div class="row properties-box">
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+        <div *ngFor="let item of businesses" class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/berber.jpeg" alt=""></a>
-            <span class="category">Berber</span>
-            <h6>En Uygun $300</h6>
-            <h4><a href="property-details.html">Eski Manisa yolu caddesi 45 numara</a></h4>
+            <a href="property-details.html">
+              <img [src]="createImgPath(item.businessImage)" alt="product" class=" item-center" style="height: 244px; width:365px;">
+            </a>
+            <span class="category">{{item.categoryName}}</span>
+            <h6>{{item.businessMinPrice}}₺-{{item.businessMaxPrice}}₺</h6>
+            <h4 class="text-center"><a href="property-details.html">{{item.businessAdress}}</a></h4>
             
-              <p class="text-center">İşletme Hakkında Kısa Açıklama</p>
+              <p class="text-center">{{item.businessShortDescription}}</p>
            
             
             <div class="main-button">
               <a href="property-details.html">Rezervasyon Yap</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/dugun_salonu.jpeg" alt=""></a>
-            <span class="category">Düğün Salonu</span>
-            <h6>En Uygun $30.000</h6>
-            <h4><a href="property-details.html">Ankara yolu asfaltı 35 numara</a></h4>
-            
-              <p class="text-center">İşletme Hakkında Kısa Açıklama</p>
-           
-            
-            <div class="main-button">
-              <a href="property-details.html">Rezervasyon Yap</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/hali_saha.jpeg" alt=""></a>
-            <span class="category">Halısaha</span>
-            <h6>En Uygun $540</h6>
-            <h4><a href="property-details.html">Yedieylül Mahallesi Tunca sokak 38 numara</a></h4>
-            
-              <p class="text-center">İşletme Hakkında Kısa Açıklama</p>
-           
-            
-            <div class="main-button">
-              <a href="property-details.html">Rezervasyon Yap</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 str">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-04.jpg" alt=""></a>
-            <span class="category">Apartment</span>
-            <h6>$584.500</h6>
-            <h4><a href="property-details.html">12 Hope Street Portland, OR 12650</a></h4>
-            <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>3</span></li>
-              <li>Area: <span>125m2</span></li>
-              <li>Floor: <span>25th</span></li>
-              <li>Parking: <span>2 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac str">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-05.jpg" alt=""></a>
-            <span class="category">Penthouse</span>
-            <h6>$925.600</h6>
-            <h4><a href="property-details.html">34 Hope Street Portland, OR 42680</a></h4>
-            <ul>
-              <li>Bedrooms: <span>4</span></li>
-              <li>Bathrooms: <span>4</span></li>
-              <li>Area: <span>180m2</span></li>
-              <li>Floor: <span>38th</span></li>
-              <li>Parking: <span>2 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac adv">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-06.jpg" alt=""></a>
-            <span class="category">Modern Condo</span>
-            <h6>$450.000</h6>
-            <h4><a href="property-details.html">22 Hope Street Portland, OR 16540</a></h4>
-            <ul>
-              <li>Bedrooms: <span>3</span></li>
-              <li>Bathrooms: <span>2</span></li>
-              <li>Area: <span>165m2</span></li>
-              <li>Floor: <span>26th</span></li>
-              <li>Parking: <span>3 cars</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac str">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-03.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$980.000</h6>
-            <h4><a href="property-details.html">14 Mid Street Miami, OR 36450</a></h4>
-            <ul>
-              <li>Bedrooms: <span>8</span></li>
-              <li>Bathrooms: <span>8</span></li>
-              <li>Area: <span>550m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>12 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac adv">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-02.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$1.520.000</h6>
-            <h4><a href="property-details.html">26 Old Street Miami, OR 12870</a></h4>
-            <ul>
-              <li>Bedrooms: <span>12</span></li>
-              <li>Bathrooms: <span>15</span></li>
-              <li>Area: <span>380m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>14 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 rac adv">
-          <div class="item">
-            <a href="property-details.html"><img src="../../../assets/img/property-01.jpg" alt=""></a>
-            <span class="category">Luxury Villa</span>
-            <h6>$3.145.000</h6>
-            <h4><a href="property-details.html">34 New Street Miami, OR 24650</a></h4>
-            <ul>
-              <li>Bedrooms: <span>10</span></li>
-              <li>Bathrooms: <span>12</span></li>
-              <li>Area: <span>860m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>10 spots</span></li>
-            </ul>
-            <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-12">
           <ul class="pagination">
             <li><a href="#">1</a></li>
@@ -184,7 +37,7 @@
             <li><a href="#">>></a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 <app-footer-public></app-footer-public>

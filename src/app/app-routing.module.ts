@@ -1,3 +1,4 @@
+import { PropertiesComponent } from './Components/properties/properties.component';
 import { PropertyDetailsComponent } from './Components/property-details/property-details.component';
 
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { ListCategoryComponent } from './Components/list-category/list-category.
 import { UpdateCategoryComponent } from './Components/update-category/update-category.component';
 import { AddBusinessComponent } from './Components/add-business/add-business.component';
 import { ListBusinessComponent } from './Components/list-business/list-business.component';
+import { UpdateBusinessComponent } from './Components/update-business/update-business.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,7 @@ const routes: Routes = [
     path: "", component: PublicLayoutComponent, children: [
       {path:"",pathMatch:"full",component:MainComponent},
       {path:"property-details",pathMatch:"full",component:PropertyDetailsComponent},
+      {path:"property",pathMatch:"full",component:PropertiesComponent},
  
     ]
   },
@@ -34,6 +37,7 @@ const routes: Routes = [
       {path:"list-category",pathMatch:"full",component:ListCategoryComponent},
       {path:"list-business",pathMatch:"full",component:ListBusinessComponent},
       {path:"update-category/:categoryId",component:UpdateCategoryComponent},
+      {path:"update-business/:businessId",component:UpdateBusinessComponent},
    
     ]
   }
