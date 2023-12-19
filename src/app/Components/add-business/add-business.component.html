@@ -1,0 +1,54 @@
+<div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">İşletme Kayıt Formu</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form [formGroup]="businessAddForm">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputEmail1">İşletme Adı</label>
+          <input  class="form-control" formControlName="businessName" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">İşletme Adresi</label>
+          <input  class="form-control" formControlName="businessAdress" >
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">İşletme Kategorisi</label>
+    
+             <select class="form-select" formControlName="categoryId" >
+                <option *ngFor="let item of categories" [value]="item.categoryId">{{item.categoryName}}</option>
+              </select> 
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">İşletme Açıklaması</label>
+          <input class="mt-5"  formControlName="businessDescription">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">İşletme Kısa Açıklama</label>
+          <input  class="form-control" formControlName="businessShortDescription" >
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Minimum Ücret</label>
+            <input  class="form-control" formControlName="businessMinPrice" >
+          </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Maksimum Ücret</label>
+            <input  class="form-control" formControlName="businessMaxPrice" >
+          </div>
+          <div class="mb-3">
+            <label for="BlogResim">Resim</label>
+            <div class="form-group">
+                <app-uploads (onUploadFinished)="uploadFinished($event)"> </app-uploads>
+            </div>
+           </div>
+    
+       <div class="card-footer">
+        <button type="submit"  (click)="add()" class="btn btn-primary">Kaydet</button>
+      </div>
+      </div>
+
+    
+    </form>
+  </div>
