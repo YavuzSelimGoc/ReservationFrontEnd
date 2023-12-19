@@ -5,6 +5,7 @@ import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Business } from '../models/business';
 import { Observable } from 'rxjs';
+import { BusinessDto } from '../Models/businessDto';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,18 @@ export class BusinessService {
    getBusiness():Observable<ListResponseModel<Business>>{
     let newPath=this.apiUrls+"business/getall";
     return this.httpClient.get<ListResponseModel<Business>>(newPath)
+  }
+  getBusinessDto():Observable<ListResponseModel<BusinessDto>>{
+    let newPath=this.apiUrls+"business/getBusinessDto";
+    return this.httpClient.get<ListResponseModel<BusinessDto>>(newPath)
+  }
+  getBusinessActiveDto():Observable<ListResponseModel<BusinessDto>>{
+    let newPath=this.apiUrls+"business/getBusinessActiveDto";
+    return this.httpClient.get<ListResponseModel<BusinessDto>>(newPath)
+  }
+  getBusinessDtoByCategoryId(categoryId:number):Observable<ListResponseModel<BusinessDto>>{
+    let newPath=this.apiUrls+"business/GetByCategoryIdDto?categoryId="+categoryId;
+    return this.httpClient.get<ListResponseModel<BusinessDto>>(newPath)
   }
   getBusinessActive():Observable<ListResponseModel<Business>>{
     let newPath=this.apiUrls+"business/getallActive";

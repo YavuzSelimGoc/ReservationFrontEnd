@@ -10,6 +10,7 @@ import { AddCategoryComponent } from './Components/add-category/add-category.com
 import { ListCategoryComponent } from './Components/list-category/list-category.component';
 import { UpdateCategoryComponent } from './Components/update-category/update-category.component';
 import { AddBusinessComponent } from './Components/add-business/add-business.component';
+import { ListBusinessComponent } from './Components/list-business/list-business.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
       {path:"add-category",pathMatch:"full",component:AddCategoryComponent},
       {path:"add-business",pathMatch:"full",component:AddBusinessComponent},
       {path:"list-category",pathMatch:"full",component:ListCategoryComponent},
+      {path:"list-business",pathMatch:"full",component:ListBusinessComponent},
       {path:"update-category/:categoryId",component:UpdateCategoryComponent},
    
     ]

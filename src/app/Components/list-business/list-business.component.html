@@ -1,0 +1,101 @@
+
+<div class="col-12 mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Kategori Tablosu</h3>
+            <input
+            class="search-bar float-right"
+            placeholder="İşletme Ara..."
+            [(ngModel)]="filtertext"
+            id="filtertext"
+            type="text"
+          />
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6"></div>
+                    <div class="col-sm-12 col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
+                            aria-describedby="example2_info">
+                            <thead>
+                                <tr>
+                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Adı
+                                        </th>
+                                        <!-- <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Numarası
+                                        </th> -->
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Adresi
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Kategori
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Hakkında
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending"> Kısa Açıklaması
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Minimum Ücret
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Maksimum Ücret
+                                        </th>
+                                
+                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                        aria-label="Engine version: activate to sort column ascending">Durum
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                        aria-label="CSS grade: activate to sort column ascending">Güncelle</th>
+                                  
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                        aria-label="CSS grade: activate to sort column ascending">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of businesses ">
+          
+                                <td>{{item.businessName}}</td>
+                                <td>{{item.businessAdress}}</td>
+                                <td>{{item.categoryName}}</td>
+                                <td>{{item.businessDescription}}</td>
+                                <td>{{item.businessShortDescription }}</td>
+                                <td>{{item.businessMinPrice}}</td>
+                                <td>{{item.businessMaxPrice}}</td>
+                              
+                                <td ><a *ngIf="!item.businessStatus" (click)="active(item);"  href="admin/list-business" class="btn btn-success">Aktif Et</a> <a *ngIf="item.businessStatus" (click)="passive(item);" href="admin/list-business" class="btn btn-warning">Pasif Et</a></td>
+                                <td><a routerLink="/admin/update-business/{{item.businessId}}" class="btn btn-primary">Güncelle</a></td>
+                                <td><a (click)="deleteBox(item);"  class="btn btn-danger">Sil</a></td> 
+                                
+                              </tr>
+  
+                            </tbody>
+                          
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  
+  
+    <!-- /.card -->
+  </div>

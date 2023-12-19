@@ -25,6 +25,7 @@ import { AddBusinessComponent } from './Components/add-business/add-business.com
 import { AddCategoryComponent } from './Components/add-category/add-category.component';
 import { ListCategoryComponent } from './Components/list-category/list-category.component';
 import { UpdateCategoryComponent } from './Components/update-category/update-category.component';
+import { ListBusinessComponent } from './Components/list-business/list-business.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UpdateCategoryComponent } from './Components/update-category/update-cat
     AddBusinessComponent,
     AddCategoryComponent,
     ListCategoryComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    ListBusinessComponent
   ],
   imports: [
     BrowserModule,
