@@ -30,36 +30,22 @@
                                     </th>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">İşletme Adı
-                                        </th>
-                                        <!-- <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">İşletme Numarası
-                                        </th> -->
-                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">İşletme Adresi
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Adı
                                         </th>
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">Kategori
-                                        </th>
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Numarası
+                                        </th> 
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">İşletme Hakkında
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Adresi
                                         </th>
+                                       
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending"> Kısa Açıklaması
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Hakkında
                                         </th>
-                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">Minimum Ücret
-                                        </th>
-                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-sort="ascending"
-                                        aria-label="Rendering engine: activate to sort column descending">Maksimum Ücret
-                                        </th>
+                                      
                                 
                                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                         aria-label="Engine version: activate to sort column ascending">Durum
@@ -72,18 +58,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let item of businesses ">
+                              <tr *ngFor="let item of customers ">
                                 <td>{{item.userName}}</td>
-                                <td>{{item.businessName}}</td>
-                                <td>{{item.businessAdress}}</td>
-                                <td>{{item.categoryName}}</td>
-                                <td>{{item.businessDescription}}</td>
-                                <td>{{item.businessShortDescription }}</td>
-                                <td>{{item.businessMinPrice}}</td>
-                                <td>{{item.businessMaxPrice}}</td>
+                                <td>{{item.customerName}}</td>
+                                <td>{{item.customerPhoneNumber}}</td>
+                                <td>{{item.customerAdress}}</td>
+                                <td>{{item.customerDescription}}</td>
+                      
                               
-                                <td ><a *ngIf="!item.businessStatus" (click)="active(item);"  href="admin/list-business" class="btn btn-success">Aktif Et</a> <a *ngIf="item.businessStatus" (click)="passive(item);" href="admin/list-business" class="btn btn-warning">Pasif Et</a></td>
-                                <td><a routerLink="/admin/update-business/{{item.businessId}}" class="btn btn-primary">Güncelle</a></td>
+                                <td ><a *ngIf="!item.customerStatus" (click)="active(item);"  href="admin/list-customer" class="btn btn-success">Aktif Et</a> <a *ngIf="item.customerStatus" (click)="passive(item);" href="admin/list-customer" class="btn btn-warning">Pasif Et</a></td>
+                                <td><a routerLink="/admin/update-customer/{{item.customerId}}" class="btn btn-primary">Güncelle</a></td>
                                 <td><a (click)="deleteBox(item);"  class="btn btn-danger">Sil</a></td> 
                                 
                               </tr>

@@ -12,18 +12,18 @@
       <div class="row properties-box">
         <div *ngFor="let item of businesses" class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
-            <a href="property-details.html">
+            <a routerLink="property-details/{{item.businessId}}">
               <img [src]="createImgPath(item.businessImage)" alt="product" class=" item-center" style="height: 244px; width:365px;">
             </a>
             <span class="category">{{item.categoryName}}</span>
             <h6>{{item.businessMinPrice}}₺-{{item.businessMaxPrice}}₺</h6>
-            <h4 class="text-center"><a href="property-details.html">{{item.businessAdress}}</a></h4>
+            <h4 class="text-center"><a routerLink="property-details/{{item.businessId}}">{{item.businessAdress}}</a></h4>
             
               <p class="text-center">{{item.businessShortDescription}}</p>
            
             
             <div class="main-button">
-              <a href="property-details.html">Rezervasyon Yap</a>
+              <a routerLink="property-details/{{item.businessId}}">Rezervasyon Yap</a>
             </div>
           </div>
         </div>

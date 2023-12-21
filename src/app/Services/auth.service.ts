@@ -2,7 +2,6 @@ import { User } from './../Models/user';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Login } from '../Models/login';
 import { SingleResponseModel } from '../Models/singleresponse';
 import { TokenModel } from '../Models/token';

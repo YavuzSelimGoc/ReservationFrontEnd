@@ -43,6 +43,11 @@ export class BusinessService {
     return this.httpClient
        .get<ResponseModel_Data<Business>>(newPath);
    }
+   getBusinessByUserName(userName:string):Observable <ResponseModel_Data<Business>> {
+    let newPath=this.apiUrls + "business/getByUserName/?userName="+userName
+    return this.httpClient
+       .get<ResponseModel_Data<Business>>(newPath);
+   }
   delete(business:Business){
     let newPath=this.apiUrls + "business/delete"
     return this.httpClient.post(newPath,business)

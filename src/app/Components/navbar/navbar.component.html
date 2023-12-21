@@ -34,7 +34,7 @@
               </p>
             </a>
           </li>
-          <li  class="nav-item text-white">
+          <li *ngIf="userType==='business'" class="nav-item text-white">
             <a class="nav-link text-white">
               <i class="nav-icon fas fa-edit"></i>
               <p class="text-white">
@@ -44,13 +44,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a routerLink="/admin/listProduct" class="nav-link">
+                <a routerLink="/admin/list-business" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p class="text-white">Ürünler Listesi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/admin/addProduct" class="nav-link">
+                <a routerLink="/admin/update-business/{{businessId}}"  class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p class="text-white">Ürün Ekle</p>
                 </a>
@@ -58,6 +58,26 @@
       
             </ul>
           </li>
+
+          <li *ngIf="userType==='business'" class="text-white">
+            <a routerLink="update-business/{{businessId}}" class="nav-link text-white" >
+              <i class="nav-icon fas fa-user mr-3"></i>
+              <p class="text-white">
+                İşletme Bilgilerim
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+          <li *ngIf="userType==='customer'" class="nav-item text-white">
+            <a class="nav-link text-white" routerLink="/admin/update-customer/{{customerId}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p class="text-white">
+                Kullanıcı Bilgilerim
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+          </li>
+          
           <li class="nav-item text-white">
             <a  class="nav-link text-white">
               <i class="nav-icon fas fa-edit"></i>

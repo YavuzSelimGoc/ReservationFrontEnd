@@ -27,6 +27,11 @@ import { ListCategoryComponent } from './Components/list-category/list-category.
 import { UpdateCategoryComponent } from './Components/update-category/update-category.component';
 import { ListBusinessComponent } from './Components/list-business/list-business.component';
 import { UpdateBusinessComponent } from './Components/update-business/update-business.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { AddBusinessPublicComponent } from './Components/add-business-public/add-business-public.component';
+import { AddCustomerComponent } from './Components/add-customer/add-customer.component';
+import { ListCustomerComponent } from './Components/list-customer/list-customer.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { UpdateBusinessComponent } from './Components/update-business/update-bus
     ListCategoryComponent,
     UpdateCategoryComponent,
     ListBusinessComponent,
-    UpdateBusinessComponent
+    UpdateBusinessComponent,
+    LoginComponent,
+    RegisterComponent,
+    AddBusinessPublicComponent,
+    AddCustomerComponent,
+    ListCustomerComponent,
   ],
   imports: [
     BrowserModule,

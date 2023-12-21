@@ -1,0 +1,45 @@
+
+<div class="container " id="container">
+    <div class="form-container sign-up-container">
+        <form [formGroup]="registerForm">
+            <h1>İşletme Hesabı</h1>
+          
+            <input type="text" formControlName="firstName" placeholder="Adınız" />
+            <input type="text" formControlName="lastName" placeholder="Soyadınız" />
+            <input type="text" formControlName="userName" placeholder="Kullanıcı Adı" />
+            <input type="password" formControlName="password" placeholder="Password" />
+            <button (click)="registerBusiness()" >Kayıt Ol</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form [formGroup]="registerForm">
+            <h1>Müşteri Hesabı</h1>
+            <div class="social-container">
+            </div>
+            <span></span>
+            <input type="text" formControlName="firstName" placeholder="Adınız" />
+            <input type="text" formControlName="lastName" placeholder="Soyadınız" />
+            <input type="text" formControlName="userName" placeholder="Kullanıcı Adı" />
+            <input type="password" formControlName="password" placeholder="Password" />
+           
+            <button (click)="registerCustomer()">Kayıt Ol</button>
+
+        </form>
+         
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Müşteri Ol</h1>
+                <p class="text-dark">Henüz bir hesabın yoksa hemen Müşteri olarak kayıt ol.</p>
+                <button class="ghost" id="signIn">Müşteri Ol</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>İşletme Ol</h1>
+                <p class="text-white">Henüz bir hesabın yoksa hemen İşletme olarak kayıt ol.</p>
+                <button class="ghost" id="signUp">İşletme Ol</button>
+            </div>
+        </div>
+    </div>
+</div>
+

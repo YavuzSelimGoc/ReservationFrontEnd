@@ -27,6 +27,8 @@ export class AddBusinessComponent implements OnInit{
   createBlogAddForm(){
     this.businessAddForm=this.formBuilder.group({
       categoryId :["",Validators.required],
+     userName :["",Validators.required],
+     phoneNumber :["",Validators.required],
            businessName:["",Validators.required],
          businessAdress:["",Validators.required],
          businessImage:["",Validators.required],

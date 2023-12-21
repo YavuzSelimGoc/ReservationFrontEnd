@@ -22,6 +22,10 @@ export class ListBusinessComponent implements OnInit {
   getBusiness() {
     this.businessService.getBusinessDto().subscribe(repsonse => {
       this.businesses = repsonse.data  
+      this.businesses.forEach(business => {
+        if(business.businessDescription.length>=50)
+        business.businessDescription=business.businessDescription.slice(0,45)+'(...)'
+      });
     })
   }
   deleteBox(business:BusinessDto)

@@ -30,6 +30,11 @@ export class CustomerService {
     return this.httpClient
        .get<ResponseModel_Data<Customer>>(newPath);
    }
+   getCustomerByUserName(userName):Observable <ResponseModel_Data<Customer>> {
+    let newPath=this.apiUrls + "customer/GetByUserName/?userName="+userName
+    return this.httpClient
+       .get<ResponseModel_Data<Customer>>(newPath);
+   }
   delete(customer:Customer){
     let newPath=this.apiUrls + "customer/delete"
     return this.httpClient.post(newPath,customer)

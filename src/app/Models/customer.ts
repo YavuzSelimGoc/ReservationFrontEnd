@@ -1,9 +1,10 @@
 export interface Customer{
-         CustomerId :number
-		 CustomerName :string
-		 CustomerPhoneNumber :string
-		 CustomerAdress :string
-		 CustomerDescription :string
-		 CustomerImage :string
-		 CustomerStatus :boolean
+         customerId :number
+		 customerName :string
+		 userName:string
+		 customerPhoneNumber :string
+		 customerAdress :string
+		 customerDescription :string
+		 customerImage :string
+		 customerStatus :boolean
 }

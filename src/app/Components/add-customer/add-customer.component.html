@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Müşteri Kayıt Formu</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form [formGroup]="customerAddForm">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Müşteri Adı</label>
+          <input  class="form-control" formControlName="customerName" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Müşteri Adresi</label>
+          <input  class="form-control" formControlName="customerAdress" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Müşteri Telefon Numarası</label>
+          <input  class="form-control" formControlName="customerPhoneNumber" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Kendinizden Biraz Bahsedin..</label>
+          <input  class="form-control"  formControlName="customerDescription">
+        </div>
+     
+
+          <div class="mb-3">
+            <label for="BlogResim">Resim</label>
+            <div class="form-group">
+                <app-uploads (onUploadFinished)="uploadFinished($event)"> </app-uploads>
+            </div>
+           </div>
+    
+       <div class="card-footer">
+        <button type="submit"  (click)="add()" class="btn btn-primary">Kaydet</button>
+      </div>
+      </div>
+
+    
+    </form>
+  </div>
+
+</div>
