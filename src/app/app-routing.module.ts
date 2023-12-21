@@ -1,3 +1,4 @@
+import { ListReservationComponent } from './Components/list-reservation/list-reservation.component';
 import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
 import { AddCustomerComponent } from './Components/add-customer/add-customer.component';
 import { PropertiesComponent } from './Components/properties/properties.component';
@@ -19,6 +20,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { AddBusinessPublicComponent } from './Components/add-business-public/add-business-public.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ListCustomerComponent } from './Components/list-customer/list-customer.component';
+import { ListActiveReservationComponent } from './Components/list-active-reservation/list-active-reservation.component';
 
 
 const routes: Routes = [
@@ -46,6 +48,8 @@ const routes: Routes = [
       {path:"list-category",pathMatch:"full",component:ListCategoryComponent},
       {path:"list-customer",pathMatch:"full",component:ListCustomerComponent},
       {path:"list-business",pathMatch:"full",component:ListBusinessComponent},
+      {path:"list-active-reservation",pathMatch:"full",component:ListActiveReservationComponent},
+      {path:"list-reservation",pathMatch:"full",component:ListReservationComponent},
       {path:"update-category/:categoryId",component:UpdateCategoryComponent},
       {path:"update-business/:businessId",component:UpdateBusinessComponent},
       {path:"update-customer/:customerId",component:UpdateCustomerComponent},

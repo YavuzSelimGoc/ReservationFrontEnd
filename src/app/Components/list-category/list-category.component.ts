@@ -56,7 +56,6 @@ export class ListCategoryComponent implements OnInit {
   active(category:Category){
    this.categoryService.active(category).subscribe(response=>{
    });
-  
   }
 
 }

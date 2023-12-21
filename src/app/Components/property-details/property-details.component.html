@@ -2,20 +2,43 @@
       <div class="container ">
         <div class="row  ">
     
-          <div class="col-lg-8 item-center">
+          <div class="col-lg-8 item-center ">
             <h2 class="text-center orangeActive mb-5">{{business.businessName}}</h2>
             <div class="main-image">
               <img [src]="createImgPath(business.businessImage)" alt="">
             </div>
-            <div class="main-content">
+            <div class="main-content item-center">
               <!-- <span class="category">Apparment</span> -->
               <h4>{{business.businessAdress}}</h4>
               <h2 class="text-center mb-5">{{business.businessName}}</h2>
 
               <p >{{business.businessDescription}}</p>
+
+              <a class="btn btn-dark item-center" (click)="openModel()">Rezervasyon Yap</a>
+
             </div> 
-     
         </div>
+        <div class="modal " style="width: 100%;"  tabindex="-1" id="exampleModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Rezervasyon için işletmeye not bırak..</h5>
+                <button type="button" (click)="closeModel()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body item-center">         
+                <editor  formControlName="reservationDescription" apiKey="g3k9xwm9ro3n70peqgxv3n14swbazl5i9v9lmnxf4i109irq" [init]="{plugins: [
+                  'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+                  'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+                  'media', 'table', 'emoticons', 'template', 'help'
+                ],}"></editor>   
+                
+                <a class="btn btn-dark  mt-3" (click)="add()" >Rezervasyonu Tamamla</a>
+
+              </div>
+            </div>
+          </div>
+        </div> 
+      
         <div class="col-lg-4 mt-5">
           <div class="info-table">
             <ul>

@@ -1,0 +1,77 @@
+
+<div class="col-12 mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Aktif Rezervasyonlar Tablosu</h3>
+            <input
+            class="search-bar float-right"
+            placeholder="Kategori Ara..."
+            [(ngModel)]="filtertext"
+            id="filtertext"
+            type="text"
+          />
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6"></div>
+                    <div class="col-sm-12 col-md-6"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="horizontal-scroll">
+                            <div class="table-container">
+                                <table id="dtHorizontalVerticalExample" class="table table-bordered table-hover dataTable dtr-inline">
+                            <thead>
+                                <tr>
+                                    <th *ngIf="userType==='customer'" class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Adı
+                                        </th>
+                                        <th *ngIf="userType==='business'" class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Adı
+                                        </th>
+                                        <th *ngIf="userType==='business'" class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Müşteri Hakkında
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Rezervasyon Açıklaması
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                        aria-label="CSS grade: activate to sort column ascending">Kabul Et</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                        aria-label="CSS grade: activate to sort column ascending">Reddet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let item of reservations ">
+          
+                                <td *ngIf="userType==='customer' || userType==='admin' ">{{item.businessName}}</td>
+                                <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerName}}</td>
+                                <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerDescription}}</td>
+                                <td>{{item.reservationDescription}}</td>
+                              
+                                <td *ngIf="userType==='business'"><a  (click)="active(item);"  href="admin/list-active-reservation" class="btn btn-success">Kabul  Et</a> </td>
+                                <td *ngIf="userType==='business'" ><a (click)="passive(item);"  href="admin/list-active-reservation" class="btn btn-danger">Reddet</a></td>
+                                                            
+                              </tr>
+  
+                            </tbody>
+                          
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  
+  
+    <!-- /.card -->
+  </div>

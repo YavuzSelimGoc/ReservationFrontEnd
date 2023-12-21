@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +34,8 @@ import { AddBusinessPublicComponent } from './Components/add-business-public/add
 import { AddCustomerComponent } from './Components/add-customer/add-customer.component';
 import { ListCustomerComponent } from './Components/list-customer/list-customer.component';
 import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
+import { ListActiveReservationComponent } from './Components/list-active-reservation/list-active-reservation.component';
+import { ListReservationComponent } from './Components/list-reservation/list-reservation.component';
 
 @NgModule({
   declarations: [
@@ -61,12 +64,15 @@ import { UpdateCustomerComponent } from './Components/update-customer/update-cus
     AddCustomerComponent,
     ListCustomerComponent,
     UpdateCustomerComponent,
+    ListActiveReservationComponent,
+    ListReservationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    EditorModule,
     ReactiveFormsModule,    
     BrowserAnimationsModule,
     ToastrModule.forRoot({
