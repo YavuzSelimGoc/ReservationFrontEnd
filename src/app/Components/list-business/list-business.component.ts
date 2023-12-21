@@ -3,6 +3,7 @@ import { Business } from 'src/app/models/business';
 import { BusinessService } from './../../Services/business.service';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -23,8 +24,9 @@ export class ListBusinessComponent implements OnInit {
     this.businessService.getBusinessDto().subscribe(repsonse => {
       this.businesses = repsonse.data  
       this.businesses.forEach(business => {
-        if(business.businessDescription.length>=50)
+        if(business.businessDescription.length>=50 )
         business.businessDescription=business.businessDescription.slice(0,45)+'(...)'
+        business.businessShortDescription=business.businessShortDescription.slice(0,45)+'(...)'
       });
     })
   }
@@ -70,5 +72,10 @@ export class ListBusinessComponent implements OnInit {
     this.businessService.active(this.business).subscribe(response=>{
     });
   })
+  }
+
+  createImgPath = (serverPath: string) => { 
+    return environment.imgUrl+`${serverPath}`; 
+    
   }
 }

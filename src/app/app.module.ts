@@ -32,6 +32,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { AddBusinessPublicComponent } from './Components/add-business-public/add-business-public.component';
 import { AddCustomerComponent } from './Components/add-customer/add-customer.component';
 import { ListCustomerComponent } from './Components/list-customer/list-customer.component';
+import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ListCustomerComponent } from './Components/list-customer/list-customer.
     AddBusinessPublicComponent,
     AddCustomerComponent,
     ListCustomerComponent,
+    UpdateCustomerComponent,
   ],
   imports: [
     BrowserModule,

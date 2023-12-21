@@ -1,3 +1,4 @@
+import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
 import { AddCustomerComponent } from './Components/add-customer/add-customer.component';
 import { PropertiesComponent } from './Components/properties/properties.component';
 import { PropertyDetailsComponent } from './Components/property-details/property-details.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
       {path:"list-business",pathMatch:"full",component:ListBusinessComponent},
       {path:"update-category/:categoryId",component:UpdateCategoryComponent},
       {path:"update-business/:businessId",component:UpdateBusinessComponent},
+      {path:"update-customer/:customerId",component:UpdateCustomerComponent},
    
     ]
   }

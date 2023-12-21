@@ -20,8 +20,9 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
-                            aria-describedby="example2_info">
+                        <div class="horizontal-scroll">
+                            <div class="table-container">
+                                <table id="dtHorizontalVerticalExample" class="table table-bordered table-hover dataTable dtr-inline">
                             <thead>
                                 <tr>
                                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
@@ -32,13 +33,17 @@
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending">İşletme Adı
                                         </th>
-                                        <!-- <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending">İşletme Numarası
-                                        </th> -->
+                                        </th> 
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending">İşletme Adresi
+                                        </th>
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">İşletme Resmi
                                         </th>
                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
@@ -75,7 +80,10 @@
                               <tr *ngFor="let item of businesses ">
                                 <td>{{item.userName}}</td>
                                 <td>{{item.businessName}}</td>
+                                <td>{{item.businessPhoneNumber}}</td>
                                 <td>{{item.businessAdress}}</td>
+                                <td> <img [src]="createImgPath(item.businessImage)" alt="product"
+                                    style="width: 75px; height: 75px;"></td>
                                 <td>{{item.categoryName}}</td>
                                 <td>{{item.businessDescription}}</td>
                                 <td>{{item.businessShortDescription }}</td>
