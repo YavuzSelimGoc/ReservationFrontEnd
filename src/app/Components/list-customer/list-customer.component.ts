@@ -1,7 +1,7 @@
 import { CustomerService } from './../../Services/customer.service';
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'src/app/models/customer';
 import Swal from 'sweetalert2';
-import { Customer } from '../../models/customer';
 
 
 @Component({

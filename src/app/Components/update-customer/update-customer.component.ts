@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { Customer } from '../../models/customer';
+import { Customer } from 'src/app/models/customer';
 import { environment } from '../../../environments/environment';
 
 

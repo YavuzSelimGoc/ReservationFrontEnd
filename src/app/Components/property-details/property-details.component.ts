@@ -6,6 +6,7 @@ import { BusinessService } from 'src/app/Services/business.service';
 import { Component, OnInit } from '@angular/core';
 import { Business } from 'src/app/models/business';
 import { environment } from 'src/environments/environment';
+import { TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 declare var window:any;
 
 
@@ -22,6 +23,7 @@ export class PropertyDetailsComponent implements OnInit{
   businessUserName:string
   constructor(private formBuilder:FormBuilder,private businessService:BusinessService,private toastrService:ToastrService,private reservationService:ReservationService ,private activatedroute:ActivatedRoute,private router:Router){ }
   ngOnInit(): void {
+
     this.activatedroute.params.subscribe(params=>{
       if(params["propertyId"]){
         this.businessId=params["propertyId"]
@@ -44,7 +46,7 @@ export class PropertyDetailsComponent implements OnInit{
       this.reservationAddForm=this.formBuilder.group({
         businessUserName:["",Validators.required],
         customerUserName:["",Validators.required],
-        reservationDescription:["Not Giriniz",Validators.required],
+        reservationDescription:["",Validators.required],
        
       })
     }

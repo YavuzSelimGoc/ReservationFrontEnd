@@ -12,9 +12,9 @@
               <h4>{{business.businessAdress}}</h4>
               <h2 class="text-center mb-5">{{business.businessName}}</h2>
 
-              <p >{{business.businessDescription}}</p>
+             <p [innerHTML]="business.businessDescription"></p>
 
-              <a class="btn btn-dark item-center" (click)="openModel()">Rezervasyon Yap</a>
+              <a class="btn btn-dark col-md-12  mb-5 item-center mt-5" (click)="openModel()">Rezervasyon Yap</a>
 
             </div> 
         </div>
@@ -25,16 +25,17 @@
                 <h5 class="modal-title">Rezervasyon için işletmeye not bırak..</h5>
                 <button type="button" (click)="closeModel()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              <form [formGroup]="reservationAddForm">
               <div class="modal-body item-center">         
                 <editor  formControlName="reservationDescription" apiKey="g3k9xwm9ro3n70peqgxv3n14swbazl5i9v9lmnxf4i109irq" [init]="{plugins: [
                   'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
                   'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
                   'media', 'table', 'emoticons', 'template', 'help'
                 ],}"></editor>   
-                
-                <a class="btn btn-dark  mt-3" (click)="add()" >Rezervasyonu Tamamla</a>
-
+                <a class="btn btn-info w-100 mt-4 mb-4" (click)="add()" >Rezervasyonu Tamamla</a>
               </div>
+            </form>
+
             </div>
           </div>
         </div> 

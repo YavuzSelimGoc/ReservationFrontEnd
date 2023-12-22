@@ -77,7 +77,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let item of businesses ">
+                              <tr *ngFor="let item of businesses | businessDto: filtertext">
                                 <td>{{item.userName}}</td>
                                 <td>{{item.businessName}}</td>
                                 <td>{{item.businessPhoneNumber}}</td>
@@ -85,7 +85,7 @@
                                 <td> <img [src]="createImgPath(item.businessImage)" alt="product"
                                     style="width: 75px; height: 75px;"></td>
                                 <td>{{item.categoryName}}</td>
-                                <td>{{item.businessDescription}}</td>
+                                <td [innerHTML]="item.businessDescription"></td>
                                 <td>{{item.businessShortDescription }}</td>
                                 <td>{{item.businessMinPrice}}</td>
                                 <td>{{item.businessMaxPrice}}</td>

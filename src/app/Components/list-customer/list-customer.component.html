@@ -5,7 +5,7 @@
             <h3 class="card-title">Kategori Tablosu</h3>
             <input
             class="search-bar float-right"
-            placeholder="İşletme Ara..."
+            placeholder="Müşteri Ara..."
             [(ngModel)]="filtertext"
             id="filtertext"
             type="text"
@@ -59,12 +59,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let item of customers ">
+                              <tr *ngFor="let item of customers  | customer: filtertext ">
                                 <td>{{item.userName}}</td>
                                 <td>{{item.customerName}}</td>
                                 <td>{{item.customerPhoneNumber}}</td>
                                 <td>{{item.customerAdress}}</td>
-                                <td>{{item.customerDescription}}</td>
+                                <td ><p [innerHTML]="item.customerDescription"></p></td>
                       
                               
                                 <td ><a *ngIf="!item.customerStatus" (click)="active(item);"  href="admin/list-customer" class="btn btn-success">Aktif Et</a> <a *ngIf="item.customerStatus" (click)="passive(item);" href="admin/list-customer" class="btn btn-warning">Pasif Et</a></td>

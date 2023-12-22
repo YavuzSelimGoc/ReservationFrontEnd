@@ -1,11 +1,12 @@
 import { TokenInterceptorService } from './Services/token-interceptor.service';
+
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { EditorModule } from '@tinymce/tinymce-angular';
+import { EditorModule , TINYMCE_SCRIPT_SRC  } from '@tinymce/tinymce-angular';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +37,9 @@ import { ListCustomerComponent } from './Components/list-customer/list-customer.
 import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
 import { ListActiveReservationComponent } from './Components/list-active-reservation/list-active-reservation.component';
 import { ListReservationComponent } from './Components/list-reservation/list-reservation.component';
+import { BusinessDtoPipe } from './pipes/business-dto.pipe';
+import { CustomerPipe } from './pipes/customer.pipe';
+import { ReservationDtoPipe } from './pipes/reservation-dto.pipe';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,9 @@ import { ListReservationComponent } from './Components/list-reservation/list-res
     UpdateCustomerComponent,
     ListActiveReservationComponent,
     ListReservationComponent,
+    BusinessDtoPipe,
+    CustomerPipe,
+    ReservationDtoPipe,
   ],
   imports: [
     BrowserModule,

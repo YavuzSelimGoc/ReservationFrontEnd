@@ -80,6 +80,31 @@
                 <a  class="nav-link text-white">
                   <i class="nav-icon fas fa-shop"></i>
                   <p class="text-white">
+                    Müşteri İşlemleri
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="/admin/list-business" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p class="text-white">Müşteri Listesi</p>
+                    </a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a routerLink="/admin/add-business" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p class="text-white">Müşteri Ekle</p>
+                    </a>
+                  </li> -->
+          
+                </ul>
+              </li>
+
+              <li *ngIf="userType==='admin'" class="nav-item text-white">
+                <a  class="nav-link text-white">
+                  <i class="nav-icon fas fa-shop"></i>
+                  <p class="text-white">
                     Rezervasyon İşlemleri
                     <i class="fas fa-angle-left right"></i>
                   </p>
@@ -101,62 +126,69 @@
               </li>
        
 
-          <li *ngIf="userType==='business'"  class="text-white">
-            <a routerLink="update-business/{{businessId}}" class="nav-link text-white" >
-              <i class="nav-icon fas fa-shop mr-3"></i>
-              <p class="text-white">
-                İşletme Bilgilerim
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-          </li>
-          <li *ngIf="userType==='business'"  class="text-white">
-            <a routerLink="update-business/{{businessId}}" class="nav-link text-white" >
-              <i class="nav-icon fas fa-shop mr-3"></i>
-              <p class="text-white">
-                Rezervasyon İşlemleri
-                <i class="fas fa-angle-left right"></i>
-              </p>
+       
+
+         
+
+          <li *ngIf="userType==='business'"  class="nav-item ">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-shop"></i>
+            <p class="text-white">
+            İşletme İşlemleri
+            <i class="fas fa-angle-left right"></i>
+            </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a routerLink="/admin/list-reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p class="text-white">Bekleyen Rezervasyon İstekleri</p>
+                <a routerLink="/admin/list-active-reservation" class="nav-link">
+                  <i class="fa fa-eye-slash nav-icon"></i>
+                  <p class="text-white"> Rezervasyon İstekleri</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/admin/add-business" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a routerLink="/admin/list-reservation" class="nav-link">
+                  <i class="fa fa-eye nav-icon"></i>
                   <p class="text-white">Geçmiş Rezervasyonlar</p>
                 </a>
               </li> 
+
             </ul>
-          </li>
-     
-          <li *ngIf="userType==='customer'"  class="text-white">
-            <a routerLink="update-business/{{businessId}}" class="nav-link text-white" >
-              <i class="nav-icon fas fa-shop mr-3"></i>
-              <p class="text-white">
-                Rezervasyon İşlemleri
-                <i class="fas fa-angle-left right"></i>
-              </p>
+            </li>
+
+          <li *ngIf="userType==='business'"  class="nav-item text-white">
+            <a routerLink="update-business/{{businessId}}"  class="nav-link">
+            <i class="nav-icon fa fa-info"></i>
+            <p class="text-white">
+              İşletme Bilgilerim
+            </p>
             </a>
-            <ul class="nav nav-treeview">
+            </li>
+
+          <li *ngIf="userType==='customer'"  class="nav-item text-white">
+            <a class="nav-link">
+            <i class="nav-icon fas fa-table"></i>
+            <p class="text-white">
+            Tables
+            <i class="fas fa-angle-left right"></i>
+            </p>
+            </a >
+            <ul class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
-                <a routerLink="/admin/list-reservation" class="nav-link">
+                <a routerLink="/admin/list-active-reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p class="text-white">Aktif Rezervasyon İsteklerim</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/admin/add-business" class="nav-link">
+                <a routerLink="/admin/list-reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p class="text-white">Geçmiş Rezervasyonlarım</p>
                 </a>
               </li> 
+     
             </ul>
-          </li>
+            </li>
+
           <li *ngIf="userType==='customer'" class="nav-item text-white">
             <a class="nav-link text-white" routerLink="/admin/update-customer/{{customerId}}">
               <i class="nav-icon fas fa-user"></i>
@@ -165,15 +197,15 @@
               </p>
             </a>
           </li>
-        
-          <li *ngIf="userType==='business' || userType==='customer'"  class="text-white">
-            <a routerLink="update-business/{{businessId}}" class="nav-link text-white" >
-              <i class="nav-icon fas fa-trash mr-3"></i>
-              <p class="text-white">
-               Hesabımı Sil
-              </p>
+       
+          <li *ngIf="userType==='business' || userType==='customer'"  class="nav-item text-white">
+            <a routerLink="update-business/{{businessId}}" class="nav-link">
+            <i class="nav-icon fa fa-trash"></i>
+            <p class="text-white">
+              Hesabımı Sil
+            </p>
             </a>
-          </li>
+            </li>
          
 
         </ul>

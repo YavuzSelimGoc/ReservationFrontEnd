@@ -2,10 +2,10 @@
 <div class="col-12 mt-3">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Aktif Rezervasyonlar Tablosu</h3>
+            <h3 class="card-title"> Rezervasyonlar Tablosu</h3>
             <input
             class="search-bar float-right"
-            placeholder="Kategori Ara..."
+            placeholder="Rezervasyon Ara..."
             [(ngModel)]="filtertext"
             id="filtertext"
             type="text"
@@ -47,12 +47,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                              <tr *ngFor="let item of reservations ">
+                              <tr *ngFor="let item of reservations | reservationDto: filtertext  ">
           
                                 <td *ngIf="userType==='customer' || userType==='admin' ">{{item.businessName}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerName}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerDescription}}</td>
-                                <td>{{item.reservationDescription}}</td>
+                                <td ><p [innerHTML]="item.customerDescription"></p></td>
                               
                                 <td *ngIf="item.isAccept===true"><h6 class="text-success">Kabul Edildi</h6> </td>
                                 <td *ngIf="item.isAccept===false"><h6 class="text-danger">Reddedildi</h6> </td>
