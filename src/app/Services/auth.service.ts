@@ -32,6 +32,10 @@ export class AuthService {
     let newPath=this.apiUrl+"api/Auth/register";
     return this.httpclient.post(newPath,user)
    }
+   Mail(mail:string,message:string){
+    let newPath=this.apiUrl+"api/Auth/Mail?mails="+mail+"&message="+message+"";
+    return this.httpclient.get(newPath)
+   }
   
   isAuthenticated(){
     if(localStorage.getItem('token')){

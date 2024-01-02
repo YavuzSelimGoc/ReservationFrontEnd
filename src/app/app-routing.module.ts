@@ -1,3 +1,5 @@
+import { ContactComponent } from './Components/contact/contact.component';
+import { AboutComponent } from './Components/about/about.component';
 import { LoginGuard } from './Guards/login.guard';
 import { ListReservationComponent } from './Components/list-reservation/list-reservation.component';
 import { UpdateCustomerComponent } from './Components/update-customer/update-customer.component';
@@ -29,6 +31,8 @@ const routes: Routes = [
     path: "", component: PublicLayoutComponent, children: [
       {path:"",pathMatch:"full",component:MainComponent},
       {path:"property-details/:propertyId",pathMatch:"full",component:PropertyDetailsComponent},
+      {path:"about",pathMatch:"full",component:AboutComponent},
+      {path:"contact",pathMatch:"full",component:ContactComponent},
       {path:"property",pathMatch:"full",component:PropertiesComponent},
       {path:"add-property",pathMatch:"full",component:AddBusinessPublicComponent},
       {path:"add-customer",pathMatch:"full",component:AddCustomerComponent},

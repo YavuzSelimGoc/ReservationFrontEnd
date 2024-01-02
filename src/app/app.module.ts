@@ -40,6 +40,8 @@ import { ListReservationComponent } from './Components/list-reservation/list-res
 import { BusinessDtoPipe } from './pipes/business-dto.pipe';
 import { CustomerPipe } from './pipes/customer.pipe';
 import { ReservationDtoPipe } from './pipes/reservation-dto.pipe';
+import { AboutComponent } from './Components/about/about.component';
+import { ContactComponent } from './Components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { ReservationDtoPipe } from './pipes/reservation-dto.pipe';
     BusinessDtoPipe,
     CustomerPipe,
     ReservationDtoPipe,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

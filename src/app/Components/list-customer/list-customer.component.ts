@@ -14,10 +14,10 @@ export class ListCustomerComponent implements OnInit {
   filtertext="";
   constructor(private customerService:CustomerService){ }
   ngOnInit(): void {
-  this.getBusiness()
+  this.getCustomer()
   }
 
-  getBusiness() {
+  getCustomer() {
     this.customerService.getCustomer().subscribe(repsonse => {
       this.customers = repsonse.data  
       this.customers.forEach(customer => {
