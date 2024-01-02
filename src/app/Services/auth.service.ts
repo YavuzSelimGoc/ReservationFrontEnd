@@ -2,6 +2,7 @@ import { User } from './../Models/user';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Login } from '../Models/login';
 import { SingleResponseModel } from '../Models/singleresponse';
 import { TokenModel } from '../Models/token';
@@ -11,6 +12,16 @@ import { TokenModel } from '../Models/token';
 })
 export class AuthService {
   apiUrl = environment.apiUrl;
+
+  private token: string;
+
+  setTokenData(data: string) {
+    this.token = data;
+  }
+
+  getTokenData() {
+    return this.token;
+  }
 
   constructor(private httpclient:HttpClient) { }
   login(loginModel:Login){
@@ -23,7 +34,7 @@ export class AuthService {
    }
   
   isAuthenticated(){
-    if(localStorage.getItem("token")){
+    if(localStorage.getItem('token')){
       return true;
     }
     else{

@@ -46,6 +46,7 @@ export class PropertyDetailsComponent implements OnInit{
       this.reservationAddForm=this.formBuilder.group({
         businessUserName:["",Validators.required],
         customerUserName:["",Validators.required],
+        hour:["",Validators.required],
         reservationDescription:["",Validators.required],
        
       })
@@ -67,7 +68,14 @@ export class PropertyDetailsComponent implements OnInit{
       } 
     }
     openModel(){
+      if(localStorage.getItem('userType')===null)
+      {
+        this.router.navigate(["/login"])
+        this.toastrService.error(" Önce Giriş Yapınız","Hata")
+      }
+      else{
       this.formModel.show();
+      }
     }
   closeModel(){
     this.formModel.hide();

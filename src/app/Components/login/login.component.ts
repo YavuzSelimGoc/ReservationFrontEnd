@@ -30,7 +30,8 @@ login(){
     let loginModel = Object.assign({},this.loginForm.value)
     this.authService.login(loginModel).subscribe(response=>{
       this.toastrService.success("Giriş İşlemi Başarılı")
-      localStorage.setItem("token",response.token)
+      this.authService.setTokenData(response.token)
+      localStorage.setItem("token",response.token),
       localStorage.setItem("userName",response.userName)
       localStorage.setItem("userType",response.userType)
       this.router.navigate(["/admin"])

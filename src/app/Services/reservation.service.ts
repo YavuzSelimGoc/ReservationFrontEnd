@@ -22,6 +22,10 @@ export class ReservationService {
     let newPath=this.apiUrls+"reservation/getall";
     return this.httpClient.get<ListResponseModel<Reservation>>(newPath)
   }
+  getReservationDto():Observable<ListResponseModel<ReservationDto>>{
+    let newPath=this.apiUrls+"reservation/getAllDto";
+    return this.httpClient.get<ListResponseModel<ReservationDto>>(newPath)
+  }
   getReservationActive():Observable<ListResponseModel<Reservation>>{
     let newPath=this.apiUrls+"reservation/getallActive";
     return this.httpClient.get<ListResponseModel<Reservation>>(newPath)

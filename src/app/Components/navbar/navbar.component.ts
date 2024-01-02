@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 import { CustomerService } from './../../Services/customer.service';
 import { BusinessService } from 'src/app/Services/business.service';
 import { Business } from 'src/app/models/business';
@@ -11,7 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit{
-  constructor(private businessService:BusinessService,private customerService:CustomerService) {  }
+  constructor(private businessService:BusinessService,private toastrService:ToastrService,private customerService:CustomerService,private router:Router) {  }
    
   userType:string
   userName:string
@@ -28,6 +30,12 @@ export class NavbarComponent implements OnInit{
    this.userName=name as string;
    this.getBusinessById()
    this.getCustomerById()
+  }
+  logOut(){
+    this.router.navigate(["/login"])
+    localStorage.clear()
+    this.toastrService.info("Güvenli Çıkış Yapıldı","Bilgi")
+
   }
   getBusinessById(){
     this.businessService.getBusinessByUserName(localStorage.getItem('userName')).subscribe((response) => {
@@ -48,5 +56,6 @@ export class NavbarComponent implements OnInit{
     return environment.imgUrl+`${serverPath}`; 
     
   }
+
 
 }

@@ -30,5 +30,12 @@ export class ListReservationComponent implements OnInit {
 
       })
     }
+    else if(localStorage.getItem('userType')==='admin'){
+      this.reservationService.getReservationDto().subscribe(repsonse => {
+        this.reservations = repsonse.data  
+        console.log(this.reservations)
+
+      })
+    }
   }
 }

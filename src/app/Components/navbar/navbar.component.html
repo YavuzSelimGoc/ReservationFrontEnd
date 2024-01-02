@@ -78,7 +78,7 @@
 
               <li *ngIf="userType==='admin'" class="nav-item text-white">
                 <a  class="nav-link text-white">
-                  <i class="nav-icon fas fa-shop"></i>
+                  <i class="nav-icon fas fa-users"></i>
                   <p class="text-white">
                     Müşteri İşlemleri
                     <i class="fas fa-angle-left right"></i>
@@ -86,7 +86,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a routerLink="/admin/list-business" class="nav-link">
+                    <a routerLink="/admin/list-customer" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p class="text-white">Müşteri Listesi</p>
                     </a>
@@ -103,7 +103,7 @@
 
               <li *ngIf="userType==='admin'" class="nav-item text-white">
                 <a  class="nav-link text-white">
-                  <i class="nav-icon fas fa-shop"></i>
+                  <i class=" nav-icon fa fa-address-book" aria-hidden="true"></i>
                   <p class="text-white">
                     Rezervasyon İşlemleri
                     <i class="fas fa-angle-left right"></i>
@@ -111,7 +111,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a routerLink="/admin/list-business" class="nav-link">
+                    <a routerLink="/admin/list-reservation" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p class="text-white">Rezervasyon Listesi</p>
                     </a>
@@ -131,7 +131,7 @@
          
 
           <li *ngIf="userType==='business'"  class="nav-item ">
-            <a href="#" class="nav-link">
+            <a class="nav-link">
             <i class="nav-icon fas fa-shop"></i>
             <p class="text-white">
             İşletme İşlemleri
@@ -168,11 +168,11 @@
             <a class="nav-link">
             <i class="nav-icon fas fa-table"></i>
             <p class="text-white">
-            Tables
+            Rezervasyon İşlemleri
             <i class="fas fa-angle-left right"></i>
             </p>
             </a >
-            <ul class="nav nav-treeview" style="display: none;">
+            <ul *ngIf="userType==='customer'" class="nav nav-treeview" style="display: none;">
               <li class="nav-item">
                 <a routerLink="/admin/list-active-reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -206,6 +206,14 @@
             </p>
             </a>
             </li>
+            <li  class="nav-item text-white">
+              <a (click)="logOut()" class="nav-link">
+              <i class="nav-icon fa fa-times"></i>
+              <p class="text-white">
+                Çıkış Yap 
+              </p>
+              </a>
+              </li>
          
 
         </ul>

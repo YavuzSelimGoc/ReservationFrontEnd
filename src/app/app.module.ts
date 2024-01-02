@@ -86,7 +86,7 @@ import { ReservationDtoPipe } from './pipes/reservation-dto.pipe';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
