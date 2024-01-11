@@ -5,11 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'businessDto'
 })
 export class BusinessDtoPipe implements PipeTransform {
-
   transform(value: BusinessDto[], filtertext: string): BusinessDto[] {
-    filtertext=filtertext?filtertext.toLocaleLowerCase():""
-    return filtertext?value.filter((p:BusinessDto)=>p.businessName.toLocaleLowerCase()
-    .indexOf(filtertext)!==-1):value;
+    filtertext = filtertext ? filtertext.toLocaleLowerCase() : "";
+  
+    return filtertext ? value.filter((p: BusinessDto) =>
+      p.businessName.toLocaleLowerCase().includes(filtertext) ||
+      p.businessAdress.toLocaleLowerCase().includes(filtertext)
+    ) : value;
   }
-
 }

@@ -2,6 +2,10 @@
     <!-- ***** Header Area End ***** -->
   <div class="section properties">
     <div class="container col-md-11">
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Aklında Bir İşletme mi Var?"    [(ngModel)]="filtertext" >
+        <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+      </div>
       <ul class="properties-filter">
         <li >
           <a class="active mx-2" (click)="getBusiness()"  data-filter="*">Hepsi</a>
@@ -10,7 +14,7 @@
       </ul>
 
       <div class="row properties-box">
-        <div *ngFor="let item of businesses" class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
+        <div *ngFor="let item of businesses | businessDto: filtertext" class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
             <a routerLink="property-details/{{item.businessId}}">
               <img [src]="createImgPath(item.businessImage)" alt="product" class=" item-center" >
