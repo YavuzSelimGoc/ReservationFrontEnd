@@ -198,13 +198,18 @@
             </a>
           </li>
        
-          <li *ngIf="userType==='business' || userType==='customer'"  class="nav-item text-white">
-            <a routerLink="update-business/{{businessId}}" class="nav-link">
+          <li *ngIf="userType==='business'"  class="nav-item text-white">
+           
+            <a class="nav-link">
             <i class="nav-icon fa fa-trash"></i>
             <p class="text-white">
-              Hesabımı Sil
+              Tatil Modu  
+              <label class="checkbox-inline">
+                <input type="checkbox" data-toggle="toggle"> Third
+              </label>
             </p>
             </a>
+          
             </li>
             <li  class="nav-item text-white">
               <a (click)="logOut()" class="nav-link">

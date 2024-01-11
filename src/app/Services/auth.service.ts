@@ -26,7 +26,7 @@ export class AuthService {
   constructor(private httpclient:HttpClient) { }
   login(loginModel:Login){
     return this.httpclient.post<TokenModel>
-    (this.apiUrl+"api/auth/login",loginModel)
+    (this.apiUrl+"api/Auth/login",loginModel)
   }
   register(user:User){
     let newPath=this.apiUrl+"api/Auth/register";

@@ -11,7 +11,7 @@
                 <p class="login-box-msg">Oturum Açınız</p>
                 <form [formGroup]="loginForm" method="post">
                     <div class="input-group mb-3">
-                        <input type="email" formControlName="userName" class="form-control" >
+                        <input type="email" formControlName="userName" placeholder="User Name" class="form-control" >
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -32,7 +32,8 @@
                         </div>
                     </div>
                 </form>
-        
+                <h6 routerLink="/login/register" class="login-box-msg mt-5 pb-0 text-danger">Henüz Bir Hesabım Yok</h6>
+
             </div>
 
         </div>

@@ -29,32 +29,32 @@ import { ListActiveReservationComponent } from './Components/list-active-reserva
 const routes: Routes = [
   {
     path: "", component: PublicLayoutComponent, children: [
-      {path:"",pathMatch:"full",component:MainComponent},
-      {path:"property-details/:propertyId",pathMatch:"full",component:PropertyDetailsComponent},
-      {path:"about",pathMatch:"full",component:AboutComponent},
-      {path:"contact",pathMatch:"full",component:ContactComponent},
-      {path:"property",pathMatch:"full",component:PropertiesComponent},
-      {path:"add-property",pathMatch:"full",component:AddBusinessPublicComponent},
-      {path:"add-customer",pathMatch:"full",component:AddCustomerComponent},
+      {path:"",component:MainComponent},
+      {path:"property-details/:propertyId",component:PropertyDetailsComponent},
+      {path:"about",component:AboutComponent},
+      {path:"contact",component:ContactComponent},
+      {path:"property",component:PropertiesComponent},
+      {path:"add-property",component:AddBusinessPublicComponent},
+      {path:"add-customer",component:AddCustomerComponent},
     ]
   },
   {
     path: "login", component: LoginLayoutComponent, children: [
-      {path:"register",pathMatch:"full",component:RegisterComponent},
-      {path:"",pathMatch:"full",component:LoginComponent},
+      {path:"register",component:RegisterComponent},
+      {path:"",component:LoginComponent},
 
     ]
   },
   {
     path: "admin", component: PrivateLayoutComponent ,canActivate:[LoginGuard], children: [
 
-      {path:"add-category",pathMatch:"full",component:AddCategoryComponent, canActivate:[LoginGuard]},
-      {path:"add-business",pathMatch:"full",component:AddBusinessComponent,canActivate:[LoginGuard]},
-      {path:"list-category",pathMatch:"full",component:ListCategoryComponent ,canActivate:[LoginGuard]},
-      {path:"list-customer",pathMatch:"full",component:ListCustomerComponent ,canActivate:[LoginGuard]},
-      {path:"list-business",pathMatch:"full",component:ListBusinessComponent ,canActivate:[LoginGuard]},
-      {path:"list-active-reservation",pathMatch:"full",component:ListActiveReservationComponent ,canActivate:[LoginGuard]},
-      {path:"list-reservation",pathMatch:"full",component:ListReservationComponent ,canActivate:[LoginGuard]},
+      {path:"add-category",component:AddCategoryComponent, canActivate:[LoginGuard]},
+      {path:"add-business",component:AddBusinessComponent,canActivate:[LoginGuard]},
+      {path:"list-category",component:ListCategoryComponent ,canActivate:[LoginGuard]},
+      {path:"list-customer",component:ListCustomerComponent ,canActivate:[LoginGuard]},
+      {path:"list-business",component:ListBusinessComponent ,canActivate:[LoginGuard]},
+      {path:"list-active-reservation",component:ListActiveReservationComponent ,canActivate:[LoginGuard]},
+      {path:"list-reservation",component:ListReservationComponent ,canActivate:[LoginGuard]},
       {path:"update-category/:categoryId",component:UpdateCategoryComponent ,canActivate:[LoginGuard]},
       {path:"update-business/:businessId",component:UpdateBusinessComponent ,canActivate:[LoginGuard]},
       {path:"update-customer/:customerId",component:UpdateCustomerComponent ,canActivate:[LoginGuard]},

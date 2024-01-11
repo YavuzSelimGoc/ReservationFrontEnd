@@ -44,6 +44,20 @@ export class NavbarComponent implements OnInit{
      this.businessId=response.data.businessId
     });
   }
+  passive(){
+    this.businessService.getBusinessByUserName(localStorage.getItem('userName')).subscribe(repsonse => {
+      this.business = repsonse.data
+    this.businessService.passive(this.business).subscribe(response=>{
+    });
+  })
+  }
+  active(){
+    this.businessService.getBusinessById(localStorage.getItem('userName')).subscribe(repsonse => {
+      this.business = repsonse.data
+    this.businessService.active(this.business).subscribe(response=>{
+    });
+  })
+  }
   getCustomerById(){
     this.customerService.getCustomerByUserName(localStorage.getItem('userName')).subscribe((response) => {
       this.customer=response.data;

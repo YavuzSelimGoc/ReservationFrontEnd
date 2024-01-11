@@ -19,9 +19,14 @@
             <label for="exampleInputEmail1">Müşteri Telefon Numarası</label>
             <input  class="form-control" formControlName="customerPhoneNumber" >
           </div>
+       
           <div class="form-group">
-            <label for="exampleInputPassword1">Kendinizden Biraz Bahsedin..</label>
-            <input  class="form-control"  formControlName="customerDescription">
+            <label for="exampleInputPassword1">İşletme Açıklaması</label>
+            <editor  formControlName="customerDescription" apiKey="g3k9xwm9ro3n70peqgxv3n14swbazl5i9v9lmnxf4i109irq" [init]="{plugins: [
+              'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+              'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+              'media', 'table', 'emoticons', 'template', 'help'
+            ],}"></editor>  
           </div>
        
   

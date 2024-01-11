@@ -29,6 +29,7 @@ export class AddBusinessPublicComponent implements OnInit{
        categoryId :["",Validators.required],
       userName :["",Validators.required],
             businessName:["",Validators.required],
+            businessPhoneNumber:["",Validators.required],
           businessAdress:["",Validators.required],
           businessImage:["",Validators.required],
         businessMinPrice:["",Validators.required],
@@ -50,15 +51,15 @@ export class AddBusinessPublicComponent implements OnInit{
       if(this.businessAddForm.valid){
         let businessModel =Object.assign({},this.businessAddForm.value) 
         this.businessService.add(businessModel).subscribe(response=>{
-          localStorage.setItem('userType',"business")
-          this.router.navigate(["/admin/list-business"])
-          this.toastrService.success("Blog Ekleme İşlemi Başarılı","Tebrikler")
+          //localStorage.setItem('userType',"business")
+          this.router.navigate(["/login"])
+          this.toastrService.success("İşyeri Ekleme İşlemi Başarılı","Tebrikler")
         
         });
       }
       else {
         console.log("İşletme Eklenemedi");
-          this.toastrService.error("Blog Ekleme İşlemi Başarısız","Hata")
+          this.toastrService.error("İşyeri Ekleme İşlemi Başarısız","Hata")
       }  
      
     }

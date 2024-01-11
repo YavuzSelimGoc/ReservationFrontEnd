@@ -28,7 +28,7 @@ export class AddBusinessComponent implements OnInit{
     this.businessAddForm=this.formBuilder.group({
       categoryId :["",Validators.required],
      userName :["",Validators.required],
-     phoneNumber :["",Validators.required],
+     businessPhoneNumber :["",Validators.required],
            businessName:["",Validators.required],
          businessAdress:["",Validators.required],
          businessImage:["",Validators.required],

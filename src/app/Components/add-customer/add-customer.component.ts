@@ -37,8 +37,8 @@ export class AddCustomerComponent implements OnInit{
     if(this.customerAddForm.valid){
       let customerModel =Object.assign({},this.customerAddForm.value) 
       this.customerService.add(customerModel).subscribe(response=>{
-        localStorage.setItem('userType',"business")
-        this.router.navigate(["/admin/list-customer"])
+//        localStorage.setItem('userType',"business")
+        this.router.navigate(["/login"])
         this.toastrService.success("Müşteri Kayıt İşlemi Başarılı","Tebrikler")
       
       });

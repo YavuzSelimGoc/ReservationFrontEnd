@@ -34,7 +34,7 @@ export class UploadsComponent implements OnInit {
         if (event.type === HttpEventType.UploadProgress)
           this.progress = Math.round(100 * event.loaded / event.total);
         else if (event.type === HttpEventType.Response) {
-          this.message = 'Upload success.';
+          this.message = 'Yükleme Tamamlandı.';
           this.onUploadFinished.emit(event.body);
         }
       },
