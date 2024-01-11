@@ -1,229 +1,227 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4 text-white ">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="../../../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Rezervasyon Paneli </span>
-    </a>
+  <!-- Brand Logo -->
+  <a href="index3.html" class="brand-link">
+    <img src="../../../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
+    <span class="brand-text font-weight-light">Rezervasyon Paneli </span>
+  </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar ">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img [src]="createImgPath(image)"   style="width: 40px; height: 40px;" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a  class="d-block">Hoşgeldin {{userName}}</a>
-        </div>
+  <!-- Sidebar -->
+  <div class="sidebar ">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img [src]="createImgPath(image)" style="width: 40px; height: 40px;" class="img-circle elevation-2"
+          alt="User Image">
       </div>
+      <div class="info">
+        <a class="d-block">Hoşgeldin {{userName}}</a>
+      </div>
+    </div>
 
-      <!-- SidebarSearch Form -->
+    <!-- SidebarSearch Form -->
 
 
-      <!-- Sidebar Menu -->
-      <nav class="mt-2 text-white">
-        <ul style="color: white !important;" class="nav nav-pills nav-sidebar flex-column text-white" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
+    <!-- Sidebar Menu -->
+    <nav class="mt-2 text-white">
+      <ul style="color: white !important;" class="nav nav-pills nav-sidebar flex-column text-white"
+        data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        
-               <li *ngIf="userType==='admin'" class="nav-item text-white">
-                <a  class="nav-link text-white">
-                  <i class="nav-icon fas fa-bars"></i>
-                  <p class="text-white">
-                    Kategori İşlemleri
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="/admin/list-category" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">Kategoriler Listesi</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a routerLink="/admin/add-category" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">Kategori Ekle</p>
-                    </a>
-                  </li>
-          
-                </ul>
-              </li>
 
-              <li *ngIf="userType==='admin'" class="nav-item text-white">
-                <a  class="nav-link text-white">
-                  <i class="nav-icon fas fa-shop"></i>
-                  <p class="text-white">
-                    İşletme İşlemleri
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="/admin/list-business" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">İşletme Listesi</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a routerLink="/admin/add-business" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">İşletme Ekle</p>
-                    </a>
-                  </li>
-          
-                </ul>
-              </li>
+        <li *ngIf="userType==='admin'" class="nav-item text-white">
+          <a class="nav-link text-white">
+            <i class="nav-icon fas fa-bars"></i>
+            <p class="text-white">
+              Kategori İşlemleri
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/admin/list-category" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Kategoriler Listesi</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/add-category" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Kategori Ekle</p>
+              </a>
+            </li>
 
-              <li *ngIf="userType==='admin'" class="nav-item text-white">
-                <a  class="nav-link text-white">
-                  <i class="nav-icon fas fa-users"></i>
-                  <p class="text-white">
-                    Müşteri İşlemleri
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="/admin/list-customer" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">Müşteri Listesi</p>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
+          </ul>
+        </li>
+
+        <li *ngIf="userType==='admin'" class="nav-item text-white">
+          <a class="nav-link text-white">
+            <i class="nav-icon fas fa-shop"></i>
+            <p class="text-white">
+              İşletme İşlemleri
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/admin/list-business" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">İşletme Listesi</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/add-business" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">İşletme Ekle</p>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li *ngIf="userType==='admin'" class="nav-item text-white">
+          <a class="nav-link text-white">
+            <i class="nav-icon fas fa-users"></i>
+            <p class="text-white">
+              Müşteri İşlemleri
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/admin/list-customer" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Müşteri Listesi</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
                     <a routerLink="/admin/add-business" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p class="text-white">Müşteri Ekle</p>
                     </a>
                   </li> -->
-          
-                </ul>
-              </li>
 
-              <li *ngIf="userType==='admin'" class="nav-item text-white">
-                <a  class="nav-link text-white">
-                  <i class=" nav-icon fa fa-address-book" aria-hidden="true"></i>
-                  <p class="text-white">
-                    Rezervasyon İşlemleri
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a routerLink="/admin/list-reservation" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p class="text-white">Rezervasyon Listesi</p>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
+          </ul>
+        </li>
+
+        <li *ngIf="userType==='admin'" class="nav-item text-white">
+          <a class="nav-link text-white">
+            <i class=" nav-icon fa fa-address-book" aria-hidden="true"></i>
+            <p class="text-white">
+              Rezervasyon İşlemleri
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/admin/list-reservation" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Rezervasyon Listesi</p>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
                     <a routerLink="/admin/add-business" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p class="text-white">İşletme Ekle</p>
                     </a>
                   </li> -->
-                </ul>
-              </li>
-       
+          </ul>
+        </li>
 
-       
 
-         
 
-          <li *ngIf="userType==='business'"  class="nav-item ">
-            <a class="nav-link">
+
+
+
+        <li *ngIf="userType==='business'" class="nav-item ">
+          <a class="nav-link">
             <i class="nav-icon fas fa-shop"></i>
             <p class="text-white">
-            İşletme İşlemleri
-            <i class="fas fa-angle-left right"></i>
+              İşletme İşlemleri
+              <i class="fas fa-angle-left right"></i>
             </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a routerLink="/admin/list-active-reservation" class="nav-link">
-                  <i class="fa fa-eye-slash nav-icon"></i>
-                  <p class="text-white"> Rezervasyon İstekleri</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="/admin/list-reservation" class="nav-link">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p class="text-white">Geçmiş Rezervasyonlar</p>
-                </a>
-              </li> 
-
-            </ul>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/admin/list-active-reservation" class="nav-link">
+                <i class="fa fa-eye-slash nav-icon"></i>
+                <p class="text-white"> Rezervasyon İstekleri</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/list-reservation" class="nav-link">
+                <i class="fa fa-eye nav-icon"></i>
+                <p class="text-white">Geçmiş Rezervasyonlar</p>
+              </a>
             </li>
 
-          <li *ngIf="userType==='business'"  class="nav-item text-white">
-            <a routerLink="update-business/{{businessId}}"  class="nav-link">
+          </ul>
+        </li>
+
+        <li *ngIf="userType==='business'" class="nav-item text-white">
+          <a routerLink="update-business/{{businessId}}" class="nav-link">
             <i class="nav-icon fa fa-info"></i>
             <p class="text-white">
               İşletme Bilgilerim
             </p>
-            </a>
-            </li>
+          </a>
+        </li>
 
-          <li *ngIf="userType==='customer'"  class="nav-item text-white">
-            <a class="nav-link">
+        <li *ngIf="userType==='customer'" class="nav-item text-white">
+          <a class="nav-link">
             <i class="nav-icon fas fa-table"></i>
             <p class="text-white">
-            Rezervasyon İşlemleri
-            <i class="fas fa-angle-left right"></i>
+              Rezervasyon İşlemleri
+              <i class="fas fa-angle-left right"></i>
             </p>
-            </a >
-            <ul *ngIf="userType==='customer'" class="nav nav-treeview" style="display: none;">
-              <li class="nav-item">
-                <a routerLink="/admin/list-active-reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p class="text-white">Aktif Rezervasyon İsteklerim</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="/admin/list-reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p class="text-white">Geçmiş Rezervasyonlarım</p>
-                </a>
-              </li> 
-     
-            </ul>
-            </li>
-
-          <li *ngIf="userType==='customer'" class="nav-item text-white">
-            <a class="nav-link text-white" routerLink="/admin/update-customer/{{customerId}}">
-              <i class="nav-icon fas fa-user"></i>
-              <p class="text-white">
-                Kullanıcı Bilgilerim
-              </p>
-            </a>
-          </li>
-       
-          <li *ngIf="userType==='business'"  class="nav-item text-white">
-           
-            <a class="nav-link">
-            <i class="nav-icon fa fa-trash"></i>
-            <p class="text-white">
-              Tatil Modu  
-              <label class="checkbox-inline">
-                <input type="checkbox" data-toggle="toggle"> Third
-              </label>
-            </p>
-            </a>
-          
-            </li>
-            <li  class="nav-item text-white">
-              <a (click)="logOut()" class="nav-link">
-              <i class="nav-icon fa fa-times"></i>
-              <p class="text-white">
-                Çıkış Yap 
-              </p>
+          </a>
+          <ul *ngIf="userType==='customer'" class="nav nav-treeview" style="display: none;">
+            <li class="nav-item">
+              <a routerLink="/admin/list-active-reservation" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Aktif Rezervasyon İsteklerim</p>
               </a>
-              </li>
-         
+            </li>
+            <li class="nav-item">
+              <a routerLink="/admin/list-reservation" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p class="text-white">Geçmiş Rezervasyonlarım</p>
+              </a>
+            </li>
 
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+          </ul>
+        </li>
+
+        <li *ngIf="userType==='customer'" class="nav-item text-white">
+          <a class="nav-link text-white" routerLink="/admin/update-customer/{{customerId}}">
+            <i class="nav-icon fas fa-user"></i>
+            <p class="text-white">
+              Kullanıcı Bilgilerim
+            </p>
+          </a>
+        </li>
+
+        <li *ngIf="userType==='business'" class="nav-item text-white">
+          <a class="nav-link">
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1" [(ngModel)]="isSwitchOn" checked #switch (change)="switchAction()">
+              <label class="custom-control-label" for="customSwitch1">Tatil Modu</label>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item text-white">
+          <a (click)="logOut()" class="nav-link">
+            <i class="nav-icon fa fa-times"></i>
+            <p class="text-white">
+              Çıkış Yap
+            </p>
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</aside>
