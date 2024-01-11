@@ -42,6 +42,7 @@ import { CustomerPipe } from './pipes/customer.pipe';
 import { ReservationDtoPipe } from './pipes/reservation-dto.pipe';
 import { AboutComponent } from './Components/about/about.component';
 import { ContactComponent } from './Components/contact/contact.component';
+import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ContactComponent } from './Components/contact/contact.component';
     ReservationDtoPipe,
     AboutComponent,
     ContactComponent,
+    CategoryPipe,
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@
         <div *ngFor="let item of businesses" class="col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 adv">
           <div class="item">
             <a routerLink="property-details/{{item.businessId}}">
-              <img [src]="createImgPath(item.businessImage)" alt="product" class=" item-center" style="height: 244px; width:365px;">
+              <img [src]="createImgPath(item.businessImage)" alt="product" class=" item-center" >
             </a>
             <span class="category">{{item.categoryName}}</span>
             <h6>{{item.businessMinPrice}}₺-{{item.businessMaxPrice}}₺</h6>
