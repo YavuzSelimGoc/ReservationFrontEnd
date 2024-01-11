@@ -32,45 +32,22 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/assets/css/fontawesome.css",
               "src/assets/css/templatemo-villa-agency.css",
               "src/assets/css/owl.css",
               "src/assets/css/animate.css",
               "src/assets/css/fontawesome.css",
-
-            
-          
-              
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/assets/plugins/fontawesome-free/css/all.min.css",
               "src/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
               "src/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
-             
               "src/assets/css/adminlte.min.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css"
 
             ],
             "scripts": [
-      
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "src/assets/plugins/jquery/jquery.min.js",
-              "src/assets/plugins/jquery-ui/jquery-ui.min.js",
-
-              "src/assets/js/isotope.min.js",
-              "src/assets/js/owl-carousel.js",
-              "src/assets/js/counter.js",
-              "src/assets/js/custom.js",
-
-
-              "src/assets/plugins/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/plugins/moment/moment.min.js",
-              "src/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
-              "src/assets/plugins/summernote/summernote-bs4.min.js",
-              "src/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
-              "src/assets/js/adminlte.js",
-              "src/assets/js/pages/dashboard.js",
+              
               "node_modules/sweetalert2/dist/sweetalert2.min.js"
            
             ]

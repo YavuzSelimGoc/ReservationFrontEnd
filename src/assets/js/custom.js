@@ -3,11 +3,9 @@
 	"use strict";
 
 	// Page loading animation
-	$(window).on('load', function() {
-
-        $('#js-preloader').addClass('loaded');
-
-    });
+	$( window ).on("load", function() {
+		$('#js-preloader').addClass('loaded');
+});
 
 
 	$(window).scroll(function() {
