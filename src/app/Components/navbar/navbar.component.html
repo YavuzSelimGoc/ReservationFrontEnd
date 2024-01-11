@@ -204,8 +204,9 @@
         <li *ngIf="userType==='business'" class="nav-item text-white">
           <a class="nav-link">
             <div class="custom-control custom-switch">
+              <label style="position: absolute; top: 0; left: 40px; " >Tatil Modu</label>
               <input type="checkbox" class="custom-control-input" id="customSwitch1" [(ngModel)]="isSwitchOn" checked #switch (change)="switchAction()">
-              <label class="custom-control-label" for="customSwitch1">Tatil Modu</label>
+              <label class="custom-control-label" for="customSwitch1"></label>
             </div>
           </a>
         </li>

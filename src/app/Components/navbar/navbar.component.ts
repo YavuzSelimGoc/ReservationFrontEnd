@@ -47,6 +47,12 @@ export class NavbarComponent implements OnInit{
     });
     
   }
+  sendMessage(){
+    const phoneNumber = '905076186105'; // Hedef telefon numarasını buraya ekleyin
+    const message = 'Merhaba, bu bir test mesajıdır.';
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.location.href = whatsappURL;
+  }
   switchAction() {
     this.isSwitchOn = this.switchRef.nativeElement.checked;
   

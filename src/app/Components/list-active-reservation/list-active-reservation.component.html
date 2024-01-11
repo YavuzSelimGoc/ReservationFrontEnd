@@ -33,6 +33,10 @@
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending">Müşteri Adı
                                         </th>
+                                        <th  class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                        colspan="1" aria-sort="ascending"
+                                        aria-label="Rendering engine: activate to sort column descending">Rezervasyon Saati
+                                        </th>
                                         <th *ngIf="userType==='business'" class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
                                         colspan="1" aria-sort="ascending"
                                         aria-label="Rendering engine: activate to sort column descending">Müşteri Hakkında
@@ -54,6 +58,7 @@
           
                                 <td *ngIf="userType==='customer' || userType==='admin' ">{{item.businessName}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerName}}</td>
+                                <td>{{item.hour}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerDescription}}</td>
                                 <td ><p [innerHTML]="item.customerDescription"></p></td>
                                 <td  *ngIf="userType==='customer'"> <h6 class="text-warning"> Bekliyor </h6> </td>
