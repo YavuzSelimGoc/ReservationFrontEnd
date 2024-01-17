@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-    //imgUrl:"https://yavuz45-001-site1.htempurl.com/",
-    //apiUrl:"https://yavuz45-001-site1.htempurl.com/"
+    // imgUrl:"https://yavuz45-001-site1.htempurl.com/",
+    // apiUrl:"https://yavuz45-001-site1.htempurl.com/"
    imgUrl:"https://localhost:5001/",
    apiUrl:"https://localhost:5001/"
 };

@@ -39,7 +39,6 @@ export class ListCustomerComponent implements OnInit {
       if(result.value){
         Swal.fire("Sil","Silme işlemi başarılı","success")
         this.delete(customer);
-        setTimeout(window.location.href="/admin/list-business",3000);
         
        
       }
@@ -51,6 +50,8 @@ export class ListCustomerComponent implements OnInit {
   delete(customer:Customer){
 
     this.customerService.delete(customer).subscribe(response=>{
+      setTimeout(window.location.href="/admin/list-customer",3000);
+
     });
   }
   passive(customer:Customer){

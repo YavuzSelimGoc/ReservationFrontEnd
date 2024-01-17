@@ -10,6 +10,7 @@ export class BusinessDtoPipe implements PipeTransform {
   
     return filtertext ? value.filter((p: BusinessDto) =>
       p.businessName.toLocaleLowerCase().includes(filtertext) ||
+      p.businessShortDescription.toLocaleLowerCase().includes(filtertext) ||
       p.businessAdress.toLocaleLowerCase().includes(filtertext)
     ) : value;
   }

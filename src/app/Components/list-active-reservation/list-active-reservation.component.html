@@ -59,8 +59,7 @@
                                 <td *ngIf="userType==='customer' || userType==='admin' ">{{item.businessName}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerName}}</td>
                                 <td>{{item.hour}}</td>
-                                <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerDescription}}</td>
-                                <td ><p [innerHTML]="item.customerDescription"></p></td>
+                                <td *ngIf="userType==='business' || userType==='admin' "><p [innerHTML]="item.customerDescription"></p></td>
                                 <td  *ngIf="userType==='customer'"> <h6 class="text-warning"> Bekliyor </h6> </td>
                               
                                 <td *ngIf="userType==='business'"><a  (click)="active(item);"  href="admin/list-active-reservation" class="btn btn-success">Kabul  Et</a> </td>

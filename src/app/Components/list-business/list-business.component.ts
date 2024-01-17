@@ -43,7 +43,7 @@ export class ListBusinessComponent implements OnInit {
       if(result.value){
         Swal.fire("Sil","Silme işlemi başarılı","success")
         this.delete(business);
-        setTimeout(window.location.href="/admin/list-business",3000);
+        
         
        
       }
@@ -56,6 +56,7 @@ export class ListBusinessComponent implements OnInit {
     this.businessService.getBusinessById(businessDto.businessId).subscribe(repsonse => {
       this.business = repsonse.data
     this.businessService.delete(this.business).subscribe(response=>{
+      setTimeout(window.location.href="/admin/list-business",3000);
     });
   })
   }

@@ -56,8 +56,8 @@
                                 <td *ngIf="userType==='customer' || userType==='admin' ">{{item.businessName}}</td>
                                 <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerName}}</td>
                                 <td >{{item.hour}}</td>
-                                <td *ngIf="userType==='business' || userType==='admin' ">{{item.customerDescription}}</td>
-                                <td ><p [innerHTML]="item.customerDescription"></p></td>
+                                <td *ngIf="userType==='business' || userType==='admin' "><p [innerHTML]="item.customerDescription"></p></td>
+                                <td  ><p [innerHTML]="item.reservationDescription"></p></td>
                               
                                 <td *ngIf="item.isAccept===true && item.reservationStatus==false"><h6 class="text-success">Kabul Edildi</h6> </td>
                                 <td *ngIf="item.isAccept===false  && item.reservationStatus==false"><h6 class="text-danger">Reddedildi</h6> </td>
